@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ceshi</title>
+    <url>/2022/03/26/ceshi/</url>
+    <content><![CDATA[<img src="/.io//03/26/ceshi/1-16482604839501.png" class width="1">
+]]></content>
+  </entry>
+  <entry>
     <title>汇编基础知识</title>
     <url>/2022/03/25/one/</url>
     <content><![CDATA[<h1 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h1><p>汇编语言相关基础内容</p>
@@ -30,8 +36,6 @@
 </ol>
 <h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><p>随机存储器（RAM）:在程序的执行过程中可读可写，但必须带电存储。</p>
 <p>只读存储器（ROM）:在程序的执行过程中只读，关机数据不丢失（只读：所以对ROM的内容修改就无效）</p>
-<img src="/.io//Users\詹文敏\Desktop\学习笔记\汇编导图\存储器的分类.png" alt="存储器的分类">
-
 <ul>
 <li>RAM：随机储存器（绝大部分程序和数据），还有一部分的接口卡上的RAM（如：显存）</li>
 </ul>
@@ -167,12 +171,11 @@
 <p>如果用dx来接收这些数据，就会出现重复使用，导致其中的值错误，所以需要另外一个16位寄存器。</p>
 </li>
 </ul>
-<p><img src="/.io//1.png" alt="1"></p>
 <h3 id="段前缀"><a href="#段前缀" class="headerlink" title="段前缀"></a>段前缀</h3><p>段前缀：ds、cs、ss、es    。功能都是与ds类似  ds：[bx] 这种</p>
 <p>问题：将ffff:0—ffff:b的数据复制到0：200~0：20b中</p>
 <h4 id="思考过程-1"><a href="#思考过程-1" class="headerlink" title="思考过程"></a>思考过程</h4><ul>
 <li>0000：0200—0000：020b单元与0020：0000—0020：b描述的是同一段内存空间（计算物理地址结果相同）</li>
-<li>可以用两个段前缀来完成数据赋值，设置ds，es两个为这两段的内存空间的段地址，通过[bx]来循环赋值即可<img src="/.io//2.png" alt="2"></li>
+<li>可以用两个段前缀来完成数据赋值，设置ds，es两个为这两段的内存空间的段地址，通过[bx]来循环赋值即可</li>
 </ul>
 ]]></content>
       <tags>
