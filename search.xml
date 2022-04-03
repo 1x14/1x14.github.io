@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>汇编基础知识</title>
+    <title>汇编基础知识（一）</title>
     <url>/2022/03/25/one/</url>
-    <content><![CDATA[<h1 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h1><p>汇编语言相关基础内容</p>
+    <content><![CDATA[<h1 id="第一章、基础知识"><a href="#第一章、基础知识" class="headerlink" title="第一章、基础知识"></a>第一章、基础知识</h1><p>汇编语言相关基础内容</p>
 <span id="more"></span>
 
 <h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ol>
@@ -179,7 +179,7 @@
 <li>0000：0200—0000：020b单元与0020：0000—0020：b描述的是同一段内存空间（计算物理地址结果相同）</li>
 <li>可以用两个段前缀来完成数据赋值，设置ds，es两个为这两段的内存空间的段地址，通过[bx]来循环赋值即可</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line"></span><br><span class="line">	mov ax,0ffffh</span><br><span class="line">	mov ds,ax</span><br><span class="line">	</span><br><span class="line">	mov ax,0020h</span><br><span class="line">	mov es,ax</span><br><span class="line">	</span><br><span class="line">	mov bx,0</span><br><span class="line">	mov cx,12</span><br><span class="line">	</span><br><span class="line">s:	mov dl,ds:[bx]</span><br><span class="line">	mov es:[bx],dl</span><br><span class="line">	inc bx</span><br><span class="line">	loop s</span><br><span class="line">	</span><br><span class="line">	mov ax,4c00h</span><br><span class="line">	int 21h</span><br><span class="line">	</span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line"></span><br><span class="line">	mov ax,0ffffh</span><br><span class="line">	mov ds,ax				//设置ds:[bx]指向第一个数据</span><br><span class="line">	</span><br><span class="line">	mov ax,0020h</span><br><span class="line">	mov es,ax				//设置es:[bx]指向需要复制到的第一个位置</span><br><span class="line">	</span><br><span class="line">	mov bx,0</span><br><span class="line">	mov cx,12				//循环次数</span><br><span class="line">	</span><br><span class="line">s:	mov dl,ds:[bx]			//中间借用一个dl寄存器来存储数据</span><br><span class="line">	mov es:[bx],dl</span><br><span class="line">	inc bx	</span><br><span class="line">	loop s</span><br><span class="line">	</span><br><span class="line">	mov ax,4c00h</span><br><span class="line">	int 21h</span><br><span class="line">	</span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
